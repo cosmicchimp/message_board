@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="styles.css" />
+<% %>
+<div class="messageWrapper">
+  <h1><%= title %></h1>
+  <% messages.forEach((message) => { %> <%const cleanedDate =
+  message.added.toString().split("GMT")%>
+  <div class="messageBox">
+    <div><%- message.text %></div>
+    <div>From: <%- message.user%> - <%- cleanedDate[0]%></div>
+    <button>Info</button>
+  </div>
+  <% }) %>
+  <a href="/newmessage"><button>New Message</button></a>
+</div>

@@ -1,0 +1,26 @@
+body {
+  background-color: rgba(47, 247, 247, 0.747);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messageBox {
+  border: black 1px solid;
+  margin-bottom: 1vw;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: "Georgia";
+  padding: 1vw;
+  background-color: rgb(49, 49, 49);
+}
+
+.messageWrapper {
+  background-color: rgba(49, 49, 49, 0.801);
+  border-radius: 5px;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

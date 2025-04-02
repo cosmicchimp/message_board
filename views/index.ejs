@@ -1,14 +1,24 @@
 <link rel="stylesheet" href="styles.css" />
-<% %>
 <div class="messageWrapper">
   <h1><%= title %></h1>
-  <% messages.forEach((message) => { %> <%const cleanedDate =
+  <% messages.forEach((message, index) => { %> <%const cleanedDate =
   message.added.toString().split("GMT")%>
-  <div class="messageBox">
+  <div class="messageBox" id="message<%= index %>">
     <div><%- message.text %></div>
     <div>From: <%- message.user%> - <%- cleanedDate[0]%></div>
-    <button>Info</button>
+    <a href="/message/<%= index %>"><button>Info</button></a>
   </div>
   <% }) %>
-  <a href="/newmessage"><button>New Message</button></a>
+  <a href="/newmessage" class="info-btn"><button>New Message</button></a>
 </div>
+<!-- <script>
+  infoButtonList = document.querySelectorAll(".info-btn");
+  infoButtonList = Array.from(infoButtonList);
+  infoButtonList.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      let messageID = e.target.dataset.id;
+      window.location.href = `/message${messageID}`;
+    });
+  });
+</script> -->
+;

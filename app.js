@@ -5,6 +5,7 @@ const port = 3131;
 const path = require("node:path");
 const indexRouter = require("./routes/index.js");
 const newRouter = require("./routes/newmessage.js");
+const messageRouter = require("./routes/messagerouter.js");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 const assetsPath = path.join(__dirname, "public");
@@ -24,6 +25,7 @@ app.locals.messages = [
   },
 ];
 app.use("/", indexRouter);
+app.use("/message", messageRouter);
 app.use("/newmessage", newRouter);
 app.listen(port, () => {
   console.log("App is running on " + port);

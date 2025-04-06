@@ -6,19 +6,9 @@
   <div class="messageBox" id="message<%= index %>">
     <div><%- message.text %></div>
     <div>From: <%- message.user%> - <%- cleanedDate[0]%></div>
-    <a href="/message/<%= index %>"><button>Info</button></a>
+    <a href="/message/<%= message.id%>"><button>Info</button></a>
   </div>
   <% }) %>
   <a href="/newmessage" class="info-btn"><button>New Message</button></a>
 </div>
-<!-- <script>
-  infoButtonList = document.querySelectorAll(".info-btn");
-  infoButtonList = Array.from(infoButtonList);
-  infoButtonList.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      let messageID = e.target.dataset.id;
-      window.location.href = `/message${messageID}`;
-    });
-  });
-</script> -->
 ;
